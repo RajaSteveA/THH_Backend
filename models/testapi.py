@@ -5,7 +5,7 @@ from models.sql import sql_data_push
 from flask import jsonify
 
 def access_tokens():
-    with open("refresh_tokens.txt","r") as token:
+    with open("/app/refresh_tokens.txt","r") as token:
         token=token.read()
     access_token = token
     headers = { "Authorization": f"Bearer {access_token}" }
