@@ -54,7 +54,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'tucEDtE44BbQLv7tXCivZkn1DbmKGsYb'
 
  
-nlp = spacy.load("model-best")
+nlp = spacy.load(r"/app/model-best")
 
 result_df=None
 api_rank=None
@@ -344,7 +344,7 @@ def get_response():
 logging.basicConfig(level=logging.DEBUG)
 
 try:
-    with open('conversation_tree.json', 'r') as file:
+    with open('/app/conversation_tree.json', 'r') as file:
         conversation_tree = json.load(file)
 except Exception as e:
     logging.error(f"Error loading conversation_tree.json: {e}")
